@@ -13,54 +13,56 @@ class DashBoard extends StatelessWidget {
           style: TextStyle(fontSize: 24),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset("assets/images/dashboard/bytebank_logo.png"),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Material(
-              color: Colors.green,
-              child: InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => PageConatos(),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset("assets/images/dashboard/bytebank_logo.png"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Material(
+                color: Colors.green,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const PageConatos(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 200,
+                    height: 120,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const <Widget>[
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Icon(
+                            Icons.people_rounded,
+                            size: 32,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "Contatos",
+                            style: TextStyle(fontSize: 24, color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
-                  );
-                },
-                child: Container(
-                  width: 200,
-                  height: 120,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const <Widget>[
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.people_rounded,
-                          size: 32,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          "Contatos",
-                          style: TextStyle(fontSize: 24, color: Colors.white),
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
