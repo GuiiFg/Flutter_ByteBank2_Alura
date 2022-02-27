@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/dash_board.dart';
+import 'screens/lista_contatos.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       home: const DashBoard(),
+      //home: const PageConatos(),
     );
   }
 }
